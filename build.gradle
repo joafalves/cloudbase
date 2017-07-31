@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+}
+
+jar {
+    baseName = 'cloud-base'
+    version = '0.1.0'
+}
+
+/*sourceSets {
+    main {
+        java {
+            srcDirs('src/')
+        }
+    }
+}*/
+
+allprojects {
+    task hello << { task -> println "I'm $task.project.name" }
+}
+
+mainClassName = 'dev.cothesia.cloudbase.Main'

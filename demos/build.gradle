@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+jar {
+    baseName = 'cloud-base-demos'
+    version = '0.1.0'
+}
+
+dependencies {
+    // internal api project
+    compile project(':api')
+
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs('src/')
+        }
+    }
+}
+
+mainClassName = 'codebase.udp.UdpExample'
